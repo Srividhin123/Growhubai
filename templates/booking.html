@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GrowHub.ai — Book a call</title>
+<meta name="description" content="GrowHub.ai is a specialist AI studio shipping custom agents, automations and chatbots for ambitious companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+{% if success %}
+<div style="background:#2bf2a3;color:#0b0d0c;padding:14px 20px;text-align:center;font-weight:600;">
+  Booking confirmed — check your email for the calendar invite.
+</div>
+{% endif %}
+
+<nav class="site">
+  <div class="nav-inner">
+    <a href="/" class="logo">GrowHub<span>.ai</span></a>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/results">Results</a>
+      <a href="/process">Process</a>
+      <a href="/proof">Proof</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <a href="/booking" class="btn btn-primary">Book a call →</a>
+    <a href="#mobile-menu" class="nav-toggle" aria-label="Menu">☰</a>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <div class="container">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/results">Results</a>
+      <a href="/process">Process</a>
+      <a href="/proof">Proof</a>
+      <a href="/contact">Contact</a>
+      <a href="/booking" class="btn btn-primary" style="margin-top:8px;justify-content:center">Book a call →</a>
+      <a href="#" class="nav-toggle" style="text-align:right;color:var(--muted)">close ✕</a>
+  </div>
+</div>
+<header class="page-head">
+  <div class="container">
+    <span class="mono">⟶ 05 / Book a call</span>
+    <h1>30 minutes.<br><span class="dim">Zero obligation.</span></h1>
+    <p>Pick a slot below — or jump straight into our Calendly. Either way, you'll leave with a clear next step.</p>
+  </div>
+</header>
+<section style="border-top:none">
+  <div class="container">
+    <div class="booking">
+      <div class="panel">
+        <div class="panel-head"><div class="badge">A</div><h3 style="margin:0">Pick a date & time</h3></div>
+        <form action="/api/booking" method="post">
+         <div class="full">
+    <label>Select Date</label>
+<input type="text" id="booking-date" name="date" placeholder="Select Date" required>  </div>
+          
+           
+
+          <label style="margin-top:24px">02 · Time</label>
+          <div class="time-grid"><label><input type="radio" name="time" value="09:00"><span>09:00</span></label><label><input type="radio" name="time" value="10:00"><span>10:00</span></label><label><input type="radio" name="time" value="11:00"><span>11:00</span></label><label><input type="radio" name="time" value="13:00"><span>13:00</span></label><label><input type="radio" name="time" value="14:00"><span>14:00</span></label><label><input type="radio" name="time" value="15:00"><span>15:00</span></label><label><input type="radio" name="time" value="16:00"><span>16:00</span></label></div>
+
+          <div class="form">
+            <div><label>Full name</label><input type="text" name="name" required></div>
+            <div><label>Work email</label><input type="email" name="email" required></div>
+            <div class="full"><label>Company (optional)</label><input type="text" name="company"></div>
+            <div class="full"><label>What would you like to discuss?</label><textarea name="notes"></textarea></div>
+            <div class="full"><button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Confirm booking →</button></div>
+          </div>
+        </form>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div class="badge outline">B</div><h3 style="margin:0">Or use Calendly</h3></div>
+        <p>Prefer your own calendar? Book directly on our Calendly. Full 30-minute strategy call with a senior engineer — no sales middlemen.</p>
+        <div style="margin-top:24px">
+          <div class="check">Dedicated engineer, not sales</div>
+          <div class="check">Clear next steps, same day</div>
+          <div class="check">No slide decks — just questions</div>
+        </div>
+        <a href="https://calendly.com/growhubai01/30min" target="_blank" rel="noopener" class="btn btn-ghost-primary" style="width:100%;justify-content:center;margin-top:24px">Open Calendly ↗</a>
+        <p class="mono" style="color:var(--muted);text-align:center;margin-top:16px">30 min · Zoom · Free</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="/" class="logo">GrowHub<span>.ai</span></a>
+        <p style="margin-top:12px;max-width:280px">AI agents, automation and strategy for companies that ship.</p>
+      </div>
+      <div class="foot-col">
+        <p class="lbl">Explore</p>
+        <ul>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/results">Results</a></li>
+          <li><a href="/process">Process</a></li>
+          <li><a href="/proof">Proof</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <p class="lbl">Engage</p>
+        <ul>
+          <li><a href="/booking">Book a call</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="mailto:growhubai01@gmail.com">growhubai01@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <p class="lbl">Worldwide</p>
+        <p style="font-size:14px">Remote · GMT-8 to GMT+8<br>Response within 1 business day</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2025 GrowHub.ai</span>
+      <span class="mono" style="color:var(--muted)">Built with rigor.</span>
+    </div>
+  </div>
+</footer>
+<script>
+flatpickr("#booking-date", {
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    inline: true,
+    monthSelectorType: "static"
+});
+</script>
+</body>
+</html>

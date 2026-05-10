@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GrowHub.ai — Contact</title>
+<meta name="description" content="GrowHub.ai is a specialist AI studio shipping custom agents, automations and chatbots for ambitious companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% if success %}<div style="background:#2bf2a3;color:#0b0d0c;padding:14px 20px;text-align:center;font-weight:600;">Message received — we'll reply within 1 business day.</div>{% endif %}
+<nav class="site">
+  <div class="nav-inner">
+    <a href="/" class="logo">GrowHub<span>.ai</span></a>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/results">Results</a>
+        <a href="/process">Process</a>
+        <a href="/proof">Proof</a>
+        <a href="/contact" class="active">Contact</a>
+    </div>
+    <a href="/booking" class="btn btn-primary">Book a call →</a>
+    <a href="#mobile-menu" class="nav-toggle" aria-label="Menu">☰</a>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <div class="container">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/results">Results</a>
+      <a href="/process">Process</a>
+      <a href="/proof">Proof</a>
+      <a href="/contact">Contact</a>
+      <a href="/booking" class="btn btn-primary" style="margin-top:8px;justify-content:center">Book a call →</a>
+      <a href="#" class="nav-toggle" style="text-align:right;color:var(--muted)">close ✕</a>
+  </div>
+</div>
+<header class="page-head">
+  <div class="container">
+    <span class="mono">⟶ 06 / Get in touch</span>
+    <h1>Got a harder<br><span class="dim">problem?</span></h1>
+    <p>Write us. Every message lands directly with our founding team — no ticketing system, no auto-responders.</p>
+  </div>
+</header>
+<section style="border-top:none">
+  <div class="container">
+    <div class="contact">
+      <div>
+        <div class="info-row"><span class="k">Email</span><a href="mailto:growhubai01@gmail.com" class="accent">growhubai01@gmail.com</a></div>
+        <div class="info-row"><span class="k">Response</span><span>Within 1 business day</span></div>
+        <div class="info-row"><span class="k">Remote</span><span>Worldwide · GMT-8 to GMT+8</span></div>
+        <div class="info-row"><span class="k">Founded</span><span>2025 · Independent studio</span></div>
+      </div>
+      <form action="/api/contact" method="post" class="panel">
+        <div class="form" style="margin-top:0">
+          <div><label>Name</label><input type="text" name="name" required></div>
+          <div><label>Email</label><input type="email" name="email" required></div>
+          <div class="full"><label>Company</label><input type="text" name="company"></div>
+          <div class="full"><label>What are you trying to build?</label><textarea name="message" required></textarea></div>
+          <div class="full"><button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send message →</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="/" class="logo">GrowHub<span>.ai</span></a>
+        <p style="margin-top:12px;max-width:280px">AI agents, automation and strategy for companies that ship.</p>
+      </div>
+      <div class="foot-col">
+        <p class="lbl">Explore</p>
+        <ul>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/results">Results</a></li>
+          <li><a href="/process">Process</a></li>
+          <li><a href="/proof">Proof</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <p class="lbl">Engage</p>
+        <ul>
+          <li><a href="/booking">Book a call</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="mailto:growhubai01@gmail.com">growhubai01@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <p class="lbl">Worldwide</p>
+        <p style="font-size:14px">Remote · GMT-8 to GMT+8<br>Response within 1 business day</p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2025 GrowHub.ai</span>
+      <span class="mono" style="color:var(--muted)">Built with rigor.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
