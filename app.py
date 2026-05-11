@@ -53,11 +53,6 @@ def process():
     return flask.render_template("process.html")
 
 
-@app.route("/proof")
-def proof():
-    return flask.render_template("proof.html")
-
-
 @app.route("/booking")
 def booking():
     return flask.render_template("booking.html")

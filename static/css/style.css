@@ -57,9 +57,7 @@ nav.site{position:sticky;top:0;z-index:50;background:rgba(11,13,12,.85);backdrop
 .hero{padding:80px 0 60px;border-top:none}
 .hero .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;margin-bottom:32px}
 .hero .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
-.hero p.lead{max-width:640px;margin-top:32px;font-size:18px;color:#aab4af}
-.hero-actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
-.stats{display:flex;gap:64px;margin-top:80px;border-top:1px solid var(--line);padding-top:32px;flex-wrap:wrap}
+.hero p.lead{font-size:18px;line-height:1.8;color:#aab4af;}.stats{display:flex;gap:64px;margin-top:80px;border-top:1px solid var(--line);padding-top:32px;flex-wrap:wrap}
 .stat .num{font-family:'Space Grotesk';font-size:48px;font-weight:600;letter-spacing:-.02em;color:var(--accent)}
 .stat .lbl{font-size:13px;color:var(--muted);margin-top:4px}
 
