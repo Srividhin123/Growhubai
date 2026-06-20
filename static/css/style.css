@@ -148,14 +148,106 @@ textarea{min-height:100px;resize:vertical}
 .page-head .mono{margin-bottom:24px;display:block}
 .page-head p{margin-top:24px;max-width:640px;font-size:18px}
 
-/* SERVICES PAGE */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.svc-card{background:var(--panel);padding:40px;display:flex;flex-direction:column;gap:24px}
-.svc-card .top{display:flex;justify-content:space-between;align-items:center}
-.svc-card .icon{width:48px;height:48px;border-radius:12px;background:rgba(43,242,163,.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:22px}
-.svc-card h2{font-size:30px;margin:0 0 12px}
-.svc-card .points{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;list-style:none;font-size:14px;color:var(--muted)}
-.svc-card .points li::before{content:"▸ ";color:var(--accent)}
+/* SERVICES NETWORK SECTION */
+
+.services-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+    margin-top:60px;
+}
+
+.services-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:500px;
+}
+
+.network-container{
+    position:relative;
+    width:420px;
+    height:420px;
+}
+
+.center-node{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:2px solid var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:var(--accent);
+    background:rgba(43,242,163,.08);
+    box-shadow:0 0 40px rgba(43,242,163,.25);
+}
+
+.orbit{
+    position:absolute;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:var(--panel);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+}
+
+.orbit-1{
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.orbit-2{
+    bottom:20px;
+    left:0;
+}
+
+.orbit-3{
+    bottom:20px;
+    right:0;
+}
+
+.services-points{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.point{
+    display:flex;
+    gap:24px;
+    padding-bottom:30px;
+    border-bottom:1px solid var(--line);
+}
+
+.point-num{
+    font-size:40px;
+    font-weight:700;
+    color:var(--accent);
+    min-width:70px;
+}
+
+.point h3{
+    margin:0 0 10px;
+}
+
+.point p{
+    color:var(--muted);
+    line-height:1.8;
+}
 
 /* RESULTS PAGE bigger grid */
 .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
