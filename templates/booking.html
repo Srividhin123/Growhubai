@@ -26,8 +26,7 @@
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="/services">Services</a>
-      <a href="/results">Results</a>
-      <a href="/process">Process</a>
+      <a href="/case-studies">Case Studies</a>
       <a href="/contact">Contact</a>
     </div>
 
@@ -40,9 +39,7 @@
   <div class="container">
       <a href="/">Home</a>
       <a href="/services">Services</a>
-      <a href="/results">Results</a>
-      <a href="/process">Process</a>
-      
+      <a href="/case-studies">Case Studies</a>
       <a href="/contact">Contact</a>
       <a href="/booking" class="btn btn-primary" style="margin-top:8px;justify-content:center">Book a call →</a>
       <a href="#" class="nav-toggle" style="text-align:right;color:var(--muted)">close ✕</a>
@@ -79,13 +76,7 @@
           </div>
         </form>
       </div>
-      <div class="panel">
-  <div class="panel-head">
-    <div class="badge outline">B</div>
-    <h3 style="margin:0">Book via Calendly</h3>
-  </div>
-
-  <div class="panel">
+     <div class="panel">
     <div class="panel-head">
         <div class="badge outline">B</div>
         <h3 style="margin:0">Or use Calendly</h3>
@@ -114,6 +105,59 @@
        30 min · Zoom · Free
     </p>
 </div>
+  </section>
 
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="/" class="logo">GrowHub<span>.ai</span></a>
+        <p style="margin-top:12px;max-width:280px">
+          AI agents, automation and strategy for companies that ship.
+        </p>
+      </div>
+
+      <div class="foot-col">
+        <p class="lbl">Explore</p>
+        <ul>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <p class="lbl">Engage</p>
+        <ul>
+          <li><a href="/booking">Book a call</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="mailto:growhubai01@gmail.com">growhubai01@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <p class="lbl">Worldwide</p>
+        <p style="font-size:14px">
+          Remote · GMT-8 to GMT+8<br>
+          Response within 1 business day
+        </p>
+      </div>
+    </div>
+
+    <div class="foot-bot">
+      <span>© 2025 GrowHub.ai</span>
+      <span class="mono" style="color:var(--muted)">Built with rigor.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+flatpickr("#booking-date", {
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    inline: true,
+    monthSelectorType: "static"
+});
+</script>
+   
 </body>
 </html>

@@ -6,9 +6,9 @@ Then open: http://127.0.0.1:5000
 import json
 import os
 from datetime import datetime
-import flask
+from flask import Flask, render_template, request, jsonify
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 app.secret_key = "growhub-dev-secret-change-me"
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
@@ -35,41 +35,37 @@ def _save(path, items):
 # ---------- page routes ----------
 @app.route("/")
 def home():
-    return flask.render_template("index.html")
+    return render_template("index.html")
 
 
 @app.route("/services")
 def services():
-    return flask.render_template("services.html")
+    return render_template("services.html")
 
 
-@app.route("/results")
-def results():
-    return flask.render_template("results.html")
+@app.route("/case-studies")
+def case_studies():
+    return render_template("case-studies.html")
 
-
-@app.route("/process")
-def process():
-    return flask.render_template("process.html")
 
 
 @app.route("/booking")
 def booking():
-    return flask.render_template("booking.html")
+    return render_template("booking.html")
 
 
 @app.route("/contact")
 def contact():
-    return flask.render_template("contact.html")
+    return render_template("contact.html")
 
 
 # ---------- form endpoints ----------
 @app.route("/api/contact", methods=["POST"])
 def api_contact():
-    data = flask.request.form.to_dict() or flask.request.get_json(silent=True) or {}
+    data = request.form.to_dict() or request.get_json(silent=True) or {}
     required = ["name", "email", "message"]
     if not all(data.get(k) for k in required):
-        return flask.jsonify({"ok": False, "error": "Missing required fields"}), 400
+        return jsonify({"ok": False, "error": "Missing required fields"}), 400
     entry = {
         "name": data.get("name"),
         "email": data.get("email"),
@@ -80,17 +76,17 @@ def api_contact():
     items = _load(CONTACTS_FILE)
     items.append(entry)
     _save(CONTACTS_FILE, items)
-    if flask.request.is_json:
-        return flask.jsonify({"ok": True, "message": "Message received."})
-    return flask.render_template("contact.html", success=True)
+    if request.is_json:
+        return jsonify({"ok": True, "message": "Message received."})
+    return render_template("contact.html", success=True)
 
 
 @app.route("/api/booking", methods=["POST"])
 def api_booking():
-    data = flask.request.form.to_dict() or flask.request.get_json(silent=True) or {}
+    data = request.form.to_dict() or request.get_json(silent=True) or {}
     required = ["name", "email", "date", "time"]
     if not all(data.get(k) for k in required):
-        return flask.jsonify({"ok": False, "error": "Missing required fields"}), 400
+        return jsonify({"ok": False, "error": "Missing required fields"}), 400
     entry = {
         "name": data.get("name"),
         "email": data.get("email"),
@@ -103,17 +99,15 @@ def api_booking():
     items = _load(BOOKINGS_FILE)
     items.append(entry)
     _save(BOOKINGS_FILE, items)
-    if flask.request.is_json:
-        return flask.jsonify({"ok": True, "message": "Booking confirmed."})
-    return flask.render_template("booking.html", success=True)
+    if request.is_json:
+        return jsonify({"ok": True, "message": "Booking confirmed."})
+    return render_template("booking.html", success=True)
 
 
 @app.route("/api/health")
 def health():
-    return flask.jsonify({"status": "ok", "service": "growhub.ai", "time": datetime.utcnow().isoformat() + "Z"})
+    return jsonify({"status": "ok", "service": "growhub.ai", "time": datetime.utcnow().isoformat() + "Z"})
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-app = app

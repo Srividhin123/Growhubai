@@ -1,206 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GrowHub.ai — Home</title>
-<meta name="description" content="GrowHub.ai is a specialist AI studio shipping custom agents, automations and chatbots for ambitious companies.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GrowHub.ai — Home</title>
+  <meta name="description" content="GrowHub.ai connects founders to capital, strategic partners, and decision-makers through one powerful introduction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
+<!-- NAV -->
 <nav class="site">
   <div class="nav-inner">
-    <a href="/" class="logo">GrowHub<span>.ai</span></a>
+    <a href="{{ url_for('index') }}" class="logo">GrowHub<span>.ai</span></a>
     <div class="nav-links">
-        <a href="/" class="active">Home</a>
-        <a href="/services">Services</a>
-        <a href="/results">Results</a>
-        
-        <a href="/contact">Contact</a>
+      <a href="{{ url_for('index') }}" class="active">Home</a>
+      <a href="{{ url_for('services') }}">Services</a>
+      <a href="{{ url_for('case_studies') }}">Case Studies</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
     </div>
-    <a href="/booking" class="btn btn-primary">Book a call →</a>
+    <a href="{{ url_for('booking') }}" class="btn btn-primary">Book a call →</a>
     <a href="#mobile-menu" class="nav-toggle" aria-label="Menu">☰</a>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
 <div id="mobile-menu">
   <div class="container">
-      <a href="/">Home</a>
-      <a href="/services">Services</a>
-      <a href="/results">Results</a>
-     
-      <a href="/contact">Contact</a>
-      <a href="/booking" class="btn btn-primary" style="margin-top:8px;justify-content:center">Book a call →</a>
-      <a href="#" class="nav-toggle" style="text-align:right;color:var(--muted)">close ✕</a>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('services') }}">Services</a>
+    <a href="{{ url_for('case_studies') }}">Case Studies</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+    <a href="{{ url_for('booking') }}" class="btn btn-primary" style="margin-top:8px;justify-content:center">Book a call →</a>
+    <a href="#" class="nav-toggle" style="text-align:right;color:var(--muted)">close ✕</a>
   </div>
 </div>
+
+<!-- HERO -->
 <header class="hero">
   <div class="container">
-   <h1 style="text-align:center;">
-  One Strategic Introduction.<br>
-  The Right Table.<br>
-  <span class="accent">The Whole Game Shifts.</span>
-</h1>
+    <h1 style="text-align:center;">
+      One Strategic Introduction.<br>
+      The Right Table.<br>
+      <span class="accent">The Whole Game Shifts.</span>
+    </h1>
 
+    <p class="lead" style="text-align:center;max-width:900px;margin:30px auto 0;">
+      We are your routing partner. We connect you to capital, strategic partners, and decision-makers who can accelerate your business in a single conversation.
+    </p>
 
-</p>
-<div style="margin-top:70px;">
-    <a href="/booking" class="btn btn-primary">Book a strategy call →</a>
-    <a href="/services" class="btn btn-secondary">See what we build</a>
-</div>
+    <div class="hero-actions">
+      <a href="{{ url_for('booking') }}" class="btn btn-primary">Book a strategy call →</a>
+      <a href="{{ url_for('services') }}" class="btn btn-secondary">See what we build</a>
+    </div>
+
     <div class="stats">
-      <div class="stat" style="text-align:center;"><div class="num">86+</div><div class="lbl">40+ Industries. Four Continents.<br><span style="display:block;text-align:center;">One Network.</span></div></div>
-      <div class="stat"style="text-align:center;"><div class="num">500k+</div><div class="lbl">Connected in 2026<br><span style="display:block;text-align:center;">Across Operators, Buyers, And Capital..</span>
-</div></div>
-      <div class="stat"style="text-align:center;"><div class="num">7</div><div class="lbl">Markets moved<br><span style="display:block;text-align:center;">One Signal-Driven Conversation At A Time.</span>
-</div></div>
+      <div class="stat">
+        <div class="num">86+</div>
+        <div class="lbl">40+ Industries. Four Continents.<br>One Network.</div>
+      </div>
+      <div class="stat">
+        <div class="num">500k+</div>
+        <div class="lbl">Connected in 2026<br>Across Operators, Buyers, And Capital.</div>
+      </div>
+      <div class="stat">
+        <div class="num">7</div>
+        <div class="lbl">Markets Moved<br>One Signal-Driven Conversation At A Time.</div>
+      </div>
     </div>
   </div>
 </header>
 
+<!-- MARQUEE -->
 <div class="marquee">
-  <div class="marquee-track"><span>FORTUNE 500<span class="dot">·</span></span><span>SERIES A SAAS<span class="dot">·</span></span><span>E-COMMERCE<span class="dot">·</span></span><span>FINTECH<span class="dot">·</span></span><span>HEALTH<span class="dot">·</span></span><span>CREATOR ECON<span class="dot">·</span></span><span>B2B SALES<span class="dot">·</span></span><span>LEGAL-TECH<span class="dot">·</span></span><span>LOGISTICS<span class="dot">·</span></span><span>FORTUNE 500<span class="dot">·</span></span><span>SERIES A SAAS<span class="dot">·</span></span><span>E-COMMERCE<span class="dot">·</span></span><span>FINTECH<span class="dot">·</span></span><span>HEALTH<span class="dot">·</span></span><span>CREATOR ECON<span class="dot">·</span></span><span>B2B SALES<span class="dot">·</span></span><span>LEGAL-TECH<span class="dot">·</span></span><span>LOGISTICS<span class="dot">·</span></span></div>
+  <div class="marquee-track">
+    <span>FORTUNE 500<span class="dot">·</span></span>
+    <span>SERIES A SAAS<span class="dot">·</span></span>
+    <span>E-COMMERCE<span class="dot">·</span></span>
+    <span>FINTECH<span class="dot">·</span></span>
+    <span>HEALTH<span class="dot">·</span></span>
+    <span>CREATOR ECON<span class="dot">·</span></span>
+    <span>B2B SALES<span class="dot">·</span></span>
+    <span>LEGAL-TECH<span class="dot">·</span></span>
+    <span>LOGISTICS<span class="dot">·</span></span>
+    <span>FORTUNE 500<span class="dot">·</span></span>
+    <span>SERIES A SAAS<span class="dot">·</span></span>
+    <span>E-COMMERCE<span class="dot">·</span></span>
+    <span>FINTECH<span class="dot">·</span></span>
+    <span>HEALTH<span class="dot">·</span></span>
+    <span>CREATOR ECON<span class="dot">·</span></span>
+    <span>B2B SALES<span class="dot">·</span></span>
+    <span>LEGAL-TECH<span class="dot">·</span></span>
+    <span>LOGISTICS<span class="dot">·</span></span>
+  </div>
 </div>
 
-
-
-   <section id="services">
+<!-- SERVICES -->
+<section id="services">
   <div class="container">
-
     <p class="mono" style="margin-bottom:24px">⟶ 01 / Services</p>
-
     <div class="sec-head">
-      <h2>
-        One introduction routes a founder<br>
-        <span class="dim">to the people that change the trajectory.</span>
-      </h2>
-
-      <p>
-        Capital. Strategic partnerships. Category-defining opportunities.
-        We identify the signal, make the match, and stay involved until
-        the outcome is achieved.
-      </p>
+      <h2>One introduction routes a founder<br><span class="dim">to the people that change the trajectory.</span></h2>
+      <p>Capital. Strategic partnerships. Category-defining opportunities. We identify the signal, make the match, and stay involved until the outcome is achieved.</p>
     </div>
 
     <div class="services-layout">
 
-      <!-- LEFT SIDE -->
-<div class="services-visual">
+      <!-- LEFT: Visual -->
+      <div class="services-visual">
+        <div class="v-wrap">
 
-    <div class="network-container">
+          <div class="v-founder">
+            <div class="v-avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              </svg>
+            </div>
+            <div class="v-founder-label">
+              <strong>Founder</strong>
+              <span>(You)</span>
+            </div>
+          </div>
 
-        <div class="center-node">GrowHub.ai</div>
+          <div class="v-connector">
+            <div class="v-conn-dot"></div>
+            <div class="v-conn-dot"></div>
+          </div>
 
-        <div class="orbit orbit-1">Capital</div>
+          <div class="v-arrow-wrap">
+            <div class="v-arrow-icon"></div>
+          </div>
 
-        <div class="orbit orbit-2">Strategic<br>Partners</div>
+          <div class="v-hub">
+            <div class="v-hub-name">GrowHub.ai</div>
+            <div class="v-hub-sub">Routing Layer</div>
+          </div>
 
-        <div class="orbit orbit-3">Decision<br>Makers</div>
+          <div class="v-gap">
+            <div class="v-lane"><div class="v-dot"></div><div class="v-dot d2"></div></div>
+            <div class="v-lane"><div class="v-dot"></div><div class="v-dot d2"></div></div>
+            <div class="v-lane"><div class="v-dot"></div><div class="v-dot d2"></div></div>
+          </div>
 
-    </div>
+          <div class="v-cards">
+            <div class="v-card">
+              <div class="v-icon-box">$</div>
+              <div class="v-card-title">Capital</div>
+              <div class="v-card-sub">partners and rounds</div>
+            </div>
+            <div class="v-card">
+              <div class="v-icon-box">◎</div>
+              <div class="v-card-title">Strategic Partners</div>
+              <div class="v-card-sub">category access</div>
+            </div>
+            <div class="v-card">
+              <div class="v-icon-box">◆</div>
+              <div class="v-card-title">Decision-Makers</div>
+              <div class="v-card-sub">strategic accounts</div>
+            </div>
+          </div>
 
-</div>
+        </div>
+      </div>
 
-      <!-- RIGHT SIDE -->
-
+      <!-- RIGHT: Points -->
       <div class="services-points">
 
         <div class="point">
-          <span class="point-num">01</span>
-          <div>
+          <div class="point-num">01</div>
+          <div class="point-content">
             <h3>Signal</h3>
-            <p>
-              We identify demand before it becomes a public search —
-              buyer intent, expansion signals, and hiring triggers
-              mapped across industries.
-            </p>
+            <p>We identify demand before it becomes a public search — buyer intent, expansion signals, and hiring triggers mapped across industries.</p>
           </div>
         </div>
 
         <div class="point">
-          <span class="point-num">02</span>
-          <div>
+          <div class="point-num">02</div>
+          <div class="point-content">
             <h3>Match</h3>
-            <p>
-              We route that signal to the right operator,
-              consultant, or service provider inside our network —
-              precisely, not broadly.
-            </p>
+            <p>We route that signal to the right operator, consultant, or service provider inside our network — precisely, not broadly.</p>
           </div>
         </div>
 
         <div class="point">
-          <span class="point-num">03</span>
-          <div>
+          <div class="point-num">03</div>
+          <div class="point-content">
             <h3>Introduction</h3>
-            <p>
-              We route the right operator to the right buyer — with enough context that trust is already present before the first word is spoken.
-            </p>
+            <p>We route the right operator to the right buyer with enough context that trust is already present before the first word is spoken.</p>
           </div>
         </div>
 
         <div class="point">
-          <span class="point-num">04</span>
-          <div>
+          <div class="point-num">04</div>
+          <div class="point-content">
             <h3>Conversion</h3>
-            <p>
-              We stay in the room until the deal,
-              mandate, or partnership closes —
-              not just until the intro is made.
-            </p>
+            <p>We stay in the room until the deal, mandate, or partnership closes — not just until the intro is made.</p>
           </div>
         </div>
 
+      </div><!-- /services-points -->
+    </div><!-- /services-layout -->
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section>
+  <div class="container">
+    <p class="mono" style="margin-bottom:24px">⟶ 02 / Numbers</p>
+    <h2 style="margin-bottom:48px">Our Numbers</h2>
+    <div class="results">
+      <div class="result">
+        <div class="big">86+</div>
+        <h3>Industries</h3>
+        <p>Active relationships across technology, healthcare, finance, manufacturing and more.</p>
+      </div>
+      <div class="result">
+        <div class="big">500k+</div>
+        <h3>Network Reach</h3>
+        <p>Operators, founders, investors, buyers and strategic partners connected globally.</p>
+      </div>
+      <div class="result">
+        <div class="big">40+</div>
+        <h3>Countries</h3>
+        <p>Introductions facilitated across North America, Europe, Asia and emerging markets.</p>
+      </div>
+      <div class="result">
+        <div class="big">7</div>
+        <h3>Markets Moved</h3>
+        <p>Capital, partnerships, hiring, distribution, M&amp;A, procurement and growth initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-section">
+  <div class="container">
+    <div class="case-study-heading">
+      <p class="mono" style="margin-bottom:12px">⟶ 03 / Case Studies</p>
+      <h2>Real results.<br><span class="dim">Real companies.</span></h2>
+      <p style="margin-top:12px;">From recruitment to healthcare — see how we drive measurable pipeline growth across industries.</p>
+    </div>
+
+    <div class="index-case-grid" style="margin-top:40px;">
+
+      <!-- Recruitment -->
+      <div class="case-card">
+        <div>
+          <span class="tag-lbl">Recruitment</span>
+          <h3>Crawford Thomas</h3>
+          <p>Replaced PPC with signal-based outreach. 39 placements closed in a single quarter.</p>
+        </div>
+        <div class="case-card-footer">
+          <div class="case-card-metric">
+            <span class="num">+$100K</span>
+            <span class="lbl">one quarter · zero ad spend</span>
+          </div>
+          <a href="{{ url_for('case_studies') }}#crawford-thomas" class="read-more">
+            Read case study
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Healthcare -->
+      <div class="case-card">
+        <div>
+          <span class="tag-lbl">Healthcare AI</span>
+          <h3>Hippocratic AI</h3>
+          <p>Targeted hospital admins and tech leaders. Two strategic partnerships closed in 60 days.</p>
+        </div>
+        <div class="case-card-footer">
+          <div class="case-card-metric">
+            <span class="num">$35K</span>
+            <span class="lbl">2 partners · 60 days</span>
+          </div>
+          <a href="{{ url_for('case_studies') }}#hippocratic-ai" class="read-more">
+            Read case study
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>
 
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <p class="mono" style="margin-bottom:24px">⟶ 02 / Results</p>
-    <h2>Numbers we're<br><span class="dim">proud to print.</span></h2>
-    <div class="results">
-      <div class="result"><div class="big">2.4x</div><h3>Avg pipeline lift</h3><p>across B2B clients in 6 months</p></div>
-      <div class="result"><div class="big">97%</div><h3>Support auto-resolution</h3><p>for tier-1 tickets post-deployment</p></div>
-      <div class="result"><div class="big">14d</div><h3>Median time to ship</h3><p>from scoping call to production</p></div>
-      <div class="result"><div class="big">$1.8M</div><h3>Client cost saved</h3><p>in the last 12 months via automation</p></div>
+    <div style="margin-top:40px;text-align:center;">
+      <a href="{{ url_for('case_studies') }}" class="btn btn-primary">See all case studies →</a>
     </div>
   </div>
 </section>
 
-<section>
+<!-- TEAM -->
+<section class="team-section">
   <div class="container">
-    <div class="cta">
-      <h2>30 minutes. <span class="dim">Zero obligation.</span></h2>
-      <p style="max-width:520px;margin:0 auto">Pick a slot — leave with a clear next step, whether you hire us or not.</p>
-      <div style="margin-top:32px"><a href="/booking" class="btn btn-primary">Book a strategy call →</a></div>
+    <div class="team-header">
+      <div>
+        <p class="team-eyebrow">OUR TEAM</p>
+        <h2 class="team-title">The people <span>behind the network.</span></h2>
+      </div>
+    </div>
+    <div class="team-grid">
+      <div class="member-card">
+        <div class="member-avatar">SM</div>
+        <div class="member-role">FOUNDER</div>
+        <h3>Shaik Mohammad</h3>
+        <p>Founder &amp; Managing Partner</p>
+        <div class="member-footer">
+          <a href="https://www.linkedin.com/in/growhub-media" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span>GROWHUB.AI</span>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar">SR</div>
+        <div class="member-role">CO-FOUNDER</div>
+        <h3>Srividhin Reddy</h3>
+        <p>Co-Founder &amp; Growth Partner</p>
+        <div class="member-footer">
+          <a href="#">LinkedIn</a>
+          <span>GROWHUB.AI</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- CTA -->
+<section class="growhub-cta">
+  <div class="container">
+    <div class="cta-badge">
+      <span class="dot"></span>
+      LIMITED STRATEGY CALLS
+    </div>
+    <h2 class="cta-heading">
+      <span class="white">Tell us the room you want to be in.</span><br>
+      <span class="green">We'll tell you if we can open it.</span>
+    </h2>
+    <p class="cta-sub">
+      Thirty minutes. No pitch deck. No follow-up sequence.
+      An honest read on whether the right introduction, partnership, or capital connection is possible right now.
+    </p>
+    <a href="{{ url_for('booking') }}" class="cta-book-btn">
+      Book the call
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="foot-grid">
       <div class="foot-col">
-        <a href="/" class="logo">GrowHub<span>.ai</span></a>
-        <p style="margin-top:12px;max-width:280px">AI agents, automation and strategy for companies that ship.</p>
+        <a href="{{ url_for('index') }}" class="logo">GrowHub<span>.ai</span></a>
+        <p style="margin-top:12px;max-width:280px">Signal-driven introductions for founders who are ready to move.</p>
       </div>
       <div class="foot-col">
         <p class="lbl">Explore</p>
         <ul>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/results">Results</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('case_studies') }}">Case Studies</a></li>
+          <li><a href="{{ url_for('process') }}">Process</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <p class="lbl">Engage</p>
         <ul>
-          <li><a href="/booking">Book a call</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="{{ url_for('booking') }}">Book a call</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
           <li><a href="mailto:growhubai01@gmail.com">growhubai01@gmail.com</a></li>
         </ul>
       </div>
@@ -215,5 +394,6 @@
     </div>
   </div>
 </footer>
+
 </body>
 </html>
