@@ -9,27 +9,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=4">
 </head>
 <body>
 
-    <!-- Navigation -->
+  <!-- Navigation -->
   <nav class="site">
     <div class="nav-inner">
-      <a href="/" class="logo">GrowHub<span>.ai</span></a>
+      <a href="{{ url_for('home') }}" class="logo">GrowHub<span>.ai</span></a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/case-studies" class="active">Case Studies</a>
-        <a href="/contact">Contact</a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('case_studies') }}" class="active">Case Studies</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
       </div>
-      <a href="/booking" class="btn btn-primary">Book a call →</a>
+      <a href="{{ url_for('booking') }}" class="btn btn-primary">Book a call →</a>
       <button class="nav-toggle" aria-label="Toggle Navigation">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
   </nav>
+
   <!-- Main Container -->
   <main class="container">
 
@@ -38,7 +38,7 @@
          ==================================================== -->
     <div id="crawford-thomas" class="cs-detail-container">
       <div class="back-nav">
-        <a href="#" class="btn btn-ghost-primary back-btn">
+        <a href="{{ url_for('case_studies') }}" class="btn btn-ghost-primary back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to Case Studies
         </a>
@@ -151,6 +151,57 @@
           </div>
         </div>
       </article>
+    <!-- RELATED STORIES -->
+    <section class="stories-section">
+      <div class="container">
+        <div class="stories-top">
+          <div>
+            <div class="stories-badge"><span class="s-dot"></span> More Stories</div>
+            <h2 class="stories-heading">Other founders.<br><span class="gold">Other rooms opened.</span></h2>
+          </div>
+          <a href="{{ url_for('case_studies') }}" class="stories-see-all">See every case study ↗</a>
+        </div>
+        <div class="stories-grid">
+              <a href="{{ url_for('case_studies') }}#forplayers" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_forplayers.png') }}" alt="ForPlayers preview" loading="lazy">
+                  <span class="story-cat-badge">E-Sports</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">ForPlayers</p>
+                  <p class="story-metric">+€70K · new revenue in three months</p>
+                  <p class="story-desc">Built a precision lead system to reach sponsors in a relationship-driven market.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#hippocratic-ai" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_hippocratic.png') }}" alt="Hippocratic AI preview" loading="lazy">
+                  <span class="story-cat-badge">Healthcare AI</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Hippocratic AI</p>
+                  <p class="story-metric">$35K · 2 partners in 60 days</p>
+                  <p class="story-desc">Targeted hospital admins and tech leaders. Two strategic partnerships closed.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#regent-peak" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_regent.png') }}" alt="Regent Peak preview" loading="lazy">
+                  <span class="story-cat-badge">Wealth Management</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Regent Peak</p>
+                  <p class="story-metric">6 · qualified introductions in 45 days</p>
+                  <p class="story-desc">6 qualified introductions to ideal-fit wealth clients in 45 days.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+        </div>
+      </div>
+    </section>
+
     </div>
 
     <!-- ====================================================
@@ -158,7 +209,7 @@
          ==================================================== -->
     <div id="forplayers" class="cs-detail-container">
       <div class="back-nav">
-        <a href="#" class="btn btn-ghost-primary back-btn">
+        <a href="{{ url_for('case_studies') }}" class="btn btn-ghost-primary back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to Case Studies
         </a>
@@ -268,6 +319,57 @@
           </div>
         </div>
       </article>
+    <!-- RELATED STORIES -->
+    <section class="stories-section">
+      <div class="container">
+        <div class="stories-top">
+          <div>
+            <div class="stories-badge"><span class="s-dot"></span> More Stories</div>
+            <h2 class="stories-heading">Other founders.<br><span class="gold">Other rooms opened.</span></h2>
+          </div>
+          <a href="{{ url_for('case_studies') }}" class="stories-see-all">See every case study ↗</a>
+        </div>
+        <div class="stories-grid">
+              <a href="{{ url_for('case_studies') }}#crawford-thomas" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_crawford.png') }}" alt="Crawford Thomas preview" loading="lazy">
+                  <span class="story-cat-badge">Recruitment</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Crawford Thomas</p>
+                  <p class="story-metric">+$100K · one quarter, zero ad spend</p>
+                  <p class="story-desc">Replaced PPC with signal-based outreach. 39 placements closed in a single quarter.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#helpcare-ai" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_helpcare.png') }}" alt="HelpCare AI preview" loading="lazy">
+                  <span class="story-cat-badge">Healthcare AI</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">HelpCare AI</p>
+                  <p class="story-metric">+$85K · pipeline in under 60 days</p>
+                  <p class="story-desc">Opened doors to hospital procurement teams that were previously unreachable.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#fabulingua" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_fabulingua.png') }}" alt="FabuLingua preview" loading="lazy">
+                  <span class="story-cat-badge">EdTech</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">FabuLingua</p>
+                  <p class="story-metric">3 · school district partnerships</p>
+                  <p class="story-desc">Connected an EdTech startup to district-level curriculum buyers across two states.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+        </div>
+      </div>
+    </section>
+
     </div>
 
     <!-- ====================================================
@@ -275,7 +377,7 @@
          ==================================================== -->
     <div id="hippocratic-ai" class="cs-detail-container">
       <div class="back-nav">
-        <a href="#" class="btn btn-ghost-primary back-btn">
+        <a href="{{ url_for('case_studies') }}" class="btn btn-ghost-primary back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to Case Studies
         </a>
@@ -385,6 +487,57 @@
           </div>
         </div>
       </article>
+    <!-- RELATED STORIES -->
+    <section class="stories-section">
+      <div class="container">
+        <div class="stories-top">
+          <div>
+            <div class="stories-badge"><span class="s-dot"></span> More Stories</div>
+            <h2 class="stories-heading">Other founders.<br><span class="gold">Other rooms opened.</span></h2>
+          </div>
+          <a href="{{ url_for('case_studies') }}" class="stories-see-all">See every case study ↗</a>
+        </div>
+        <div class="stories-grid">
+              <a href="{{ url_for('case_studies') }}#crawford-thomas" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_crawford.png') }}" alt="Crawford Thomas preview" loading="lazy">
+                  <span class="story-cat-badge">Recruitment</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Crawford Thomas</p>
+                  <p class="story-metric">+$100K · one quarter, zero ad spend</p>
+                  <p class="story-desc">Replaced PPC with signal-based outreach. 39 placements closed in a single quarter.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#helpcare-ai" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_helpcare.png') }}" alt="HelpCare AI preview" loading="lazy">
+                  <span class="story-cat-badge">Healthcare AI</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">HelpCare AI</p>
+                  <p class="story-metric">+$85K · pipeline in under 60 days</p>
+                  <p class="story-desc">Opened doors to hospital procurement teams that were previously unreachable.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#regent-peak" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_regent.png') }}" alt="Regent Peak preview" loading="lazy">
+                  <span class="story-cat-badge">Wealth Management</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Regent Peak</p>
+                  <p class="story-metric">6 · qualified introductions in 45 days</p>
+                  <p class="story-desc">6 qualified introductions to ideal-fit wealth clients in 45 days.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+        </div>
+      </div>
+    </section>
+
     </div>
 
     <!-- ====================================================
@@ -392,7 +545,7 @@
          ==================================================== -->
     <div id="helpcare-ai" class="cs-detail-container">
       <div class="back-nav">
-        <a href="#" class="btn btn-ghost-primary back-btn">
+        <a href="{{ url_for('case_studies') }}" class="btn btn-ghost-primary back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to Case Studies
         </a>
@@ -502,6 +655,57 @@
           </div>
         </div>
       </article>
+    <!-- RELATED STORIES -->
+    <section class="stories-section">
+      <div class="container">
+        <div class="stories-top">
+          <div>
+            <div class="stories-badge"><span class="s-dot"></span> More Stories</div>
+            <h2 class="stories-heading">Other founders.<br><span class="gold">Other rooms opened.</span></h2>
+          </div>
+          <a href="{{ url_for('case_studies') }}" class="stories-see-all">See every case study ↗</a>
+        </div>
+        <div class="stories-grid">
+              <a href="{{ url_for('case_studies') }}#hippocratic-ai" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_hippocratic.png') }}" alt="Hippocratic AI preview" loading="lazy">
+                  <span class="story-cat-badge">Healthcare AI</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Hippocratic AI</p>
+                  <p class="story-metric">$35K · 2 partners in 60 days</p>
+                  <p class="story-desc">Targeted hospital admins and tech leaders. Two strategic partnerships closed.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#fabulingua" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_fabulingua.png') }}" alt="FabuLingua preview" loading="lazy">
+                  <span class="story-cat-badge">EdTech</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">FabuLingua</p>
+                  <p class="story-metric">3 · school district partnerships</p>
+                  <p class="story-desc">Connected an EdTech startup to district-level curriculum buyers across two states.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#regent-peak" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_regent.png') }}" alt="Regent Peak preview" loading="lazy">
+                  <span class="story-cat-badge">Wealth Management</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Regent Peak</p>
+                  <p class="story-metric">6 · qualified introductions in 45 days</p>
+                  <p class="story-desc">6 qualified introductions to ideal-fit wealth clients in 45 days.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+        </div>
+      </div>
+    </section>
+
     </div>
 
     <!-- ====================================================
@@ -509,7 +713,7 @@
          ==================================================== -->
     <div id="fabulingua" class="cs-detail-container">
       <div class="back-nav">
-        <a href="#" class="btn btn-ghost-primary back-btn">
+        <a href="{{ url_for('case_studies') }}" class="btn btn-ghost-primary back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to Case Studies
         </a>
@@ -619,6 +823,57 @@
           </div>
         </div>
       </article>
+    <!-- RELATED STORIES -->
+    <section class="stories-section">
+      <div class="container">
+        <div class="stories-top">
+          <div>
+            <div class="stories-badge"><span class="s-dot"></span> More Stories</div>
+            <h2 class="stories-heading">Other founders.<br><span class="gold">Other rooms opened.</span></h2>
+          </div>
+          <a href="{{ url_for('case_studies') }}" class="stories-see-all">See every case study ↗</a>
+        </div>
+        <div class="stories-grid">
+              <a href="{{ url_for('case_studies') }}#crawford-thomas" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_crawford.png') }}" alt="Crawford Thomas preview" loading="lazy">
+                  <span class="story-cat-badge">Recruitment</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Crawford Thomas</p>
+                  <p class="story-metric">+$100K · one quarter, zero ad spend</p>
+                  <p class="story-desc">Replaced PPC with signal-based outreach. 39 placements closed in a single quarter.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#helpcare-ai" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_helpcare.png') }}" alt="HelpCare AI preview" loading="lazy">
+                  <span class="story-cat-badge">Healthcare AI</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">HelpCare AI</p>
+                  <p class="story-metric">+$85K · pipeline in under 60 days</p>
+                  <p class="story-desc">Opened doors to hospital procurement teams that were previously unreachable.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#regent-peak" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_regent.png') }}" alt="Regent Peak preview" loading="lazy">
+                  <span class="story-cat-badge">Wealth Management</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Regent Peak</p>
+                  <p class="story-metric">6 · qualified introductions in 45 days</p>
+                  <p class="story-desc">6 qualified introductions to ideal-fit wealth clients in 45 days.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+        </div>
+      </div>
+    </section>
+
     </div>
 
     <!-- ====================================================
@@ -626,7 +881,7 @@
          ==================================================== -->
     <div id="regent-peak" class="cs-detail-container">
       <div class="back-nav">
-        <a href="#" class="btn btn-ghost-primary back-btn">
+        <a href="{{ url_for('case_studies') }}" class="btn btn-ghost-primary back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to Case Studies
         </a>
@@ -713,7 +968,7 @@
                   <div class="reply-avatar">GT</div>
                   <div class="reply-sender-info">
                     <strong>Gary Thorne</strong>
-                    <span>CEO & Founder, Thorne Logistics</span>
+                    <span>CEO &amp; Founder, Thorne Logistics</span>
                   </div>
                 </div>
                 <div class="reply-status">Coffee Booked</div>
@@ -736,6 +991,57 @@
           </div>
         </div>
       </article>
+    <!-- RELATED STORIES -->
+    <section class="stories-section">
+      <div class="container">
+        <div class="stories-top">
+          <div>
+            <div class="stories-badge"><span class="s-dot"></span> More Stories</div>
+            <h2 class="stories-heading">Other founders.<br><span class="gold">Other rooms opened.</span></h2>
+          </div>
+          <a href="{{ url_for('case_studies') }}" class="stories-see-all">See every case study ↗</a>
+        </div>
+        <div class="stories-grid">
+              <a href="{{ url_for('case_studies') }}#crawford-thomas" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_crawford.png') }}" alt="Crawford Thomas preview" loading="lazy">
+                  <span class="story-cat-badge">Recruitment</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Crawford Thomas</p>
+                  <p class="story-metric">+$100K · one quarter, zero ad spend</p>
+                  <p class="story-desc">Replaced PPC with signal-based outreach. 39 placements closed in a single quarter.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#forplayers" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_forplayers.png') }}" alt="ForPlayers preview" loading="lazy">
+                  <span class="story-cat-badge">E-Sports</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">ForPlayers</p>
+                  <p class="story-metric">+€70K · new revenue in three months</p>
+                  <p class="story-desc">Built a precision lead system to reach sponsors in a relationship-driven market.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+              <a href="{{ url_for('case_studies') }}#hippocratic-ai" class="story-card">
+                <div class="story-img-wrap">
+                  <img src="{{ url_for('static', filename='images/preview_hippocratic.png') }}" alt="Hippocratic AI preview" loading="lazy">
+                  <span class="story-cat-badge">Healthcare AI</span>
+                </div>
+                <div class="story-body">
+                  <p class="story-logo-text">Hippocratic AI</p>
+                  <p class="story-metric">$35K · 2 partners in 60 days</p>
+                  <p class="story-desc">Targeted hospital admins and tech leaders. Two strategic partnerships closed.</p>
+                  <span class="story-read-btn">Read case study ↗</span>
+                </div>
+              </a>
+        </div>
+      </div>
+    </section>
+
     </div>
 
     <!-- ====================================================
@@ -789,7 +1095,7 @@
               </div>
               <a href="#crawford-thomas" class="read-more">
                 Read case study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 5"></polyline></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
           </div>
@@ -808,7 +1114,7 @@
               </div>
               <a href="#forplayers" class="read-more">
                 Read case study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 5"></polyline></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
           </div>
@@ -827,7 +1133,7 @@
               </div>
               <a href="#hippocratic-ai" class="read-more">
                 Read case study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 5"></polyline></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
           </div>
@@ -846,7 +1152,7 @@
               </div>
               <a href="#helpcare-ai" class="read-more">
                 Read case study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 5"></polyline></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
           </div>
@@ -865,7 +1171,7 @@
               </div>
               <a href="#fabulingua" class="read-more">
                 Read case study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 5"></polyline></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
           </div>
@@ -884,7 +1190,7 @@
               </div>
               <a href="#regent-peak" class="read-more">
                 Read case study
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 5"></polyline></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
             </div>
           </div>
@@ -907,7 +1213,7 @@
         <span class="green">outbound engine?</span>
       </h2>
       <p class="cta-sub">Join high-growth startups and established firms that have replaced expensive ads with warm, direct introductions to high-value decision-makers.</p>
-      <a href="/booking" class="cta-book-btn">
+      <a href="{{ url_for('booking') }}" class="cta-book-btn">
         Book a Discovery Call
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
@@ -919,30 +1225,30 @@
     <div class="container">
       <div class="foot-grid">
         <div class="foot-col">
-          <a href="index.html" class="logo">Grow<span>Hub</span></a>
+          <a href="{{ url_for('home') }}" class="logo">GrowHub<span>.ai</span></a>
           <p style="margin-top: 16px; font-size: 14px;">Unlocking predictable pipeline growth for enterprise B2B sales teams.</p>
         </div>
         <div class="foot-col">
           <p class="lbl">Platform</p>
           <ul>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="results.html">Case Studies</a></li>
-            <li><a href="process.html">Our Process</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('case_studies') }}">Case Studies</a></li>
+            <li><a href="#">Our Process</a></li>
           </ul>
         </div>
         <div class="foot-col">
           <p class="lbl">Company</p>
           <ul>
-            <li><a href="proof.html">About Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">About Team</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
         <div class="foot-col">
           <p class="lbl">Contact</p>
           <ul>
             <li><a href="mailto:growhubai01@gmail.com">growhubai01@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/company/112134965/admin/dashboard/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/growhub-media/" target="_blank">LinkedIn</a></li>
             <li><a href="#">India</a></li>
           </ul>
         </div>

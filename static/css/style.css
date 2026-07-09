@@ -2023,3 +2023,363 @@ footer{border-top:1px solid var(--line);margin-top:96px}
     align-self: stretch;
   }
 }
+
+/* ============================================================
+   PREMIUM RELATED STORIES SECTION
+   ============================================================ */
+.stories-section {
+  padding: 80px 0 100px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.stories-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.stories-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e6b84a;
+  margin-bottom: 16px;
+}
+
+.stories-badge .s-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e6b84a;
+  box-shadow: 0 0 8px #e6b84a;
+}
+
+.stories-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+}
+
+.stories-heading .gold {
+  color: #e6b84a;
+}
+
+.stories-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+.stories-see-all:hover {
+  border-color: #e6b84a;
+  color: #e6b84a;
+}
+
+/* Story Cards Grid */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.story-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border-color: rgba(230, 184, 74, 0.3);
+}
+
+/* Card Image */
+.story-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.story-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.story-card:hover .story-img-wrap img {
+  transform: scale(1.04);
+}
+
+.story-cat-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(230,184,74,0.3);
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e6b84a;
+}
+
+.story-cat-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e6b84a;
+  flex-shrink: 0;
+}
+
+/* Card Body */
+.story-body {
+  padding: 24px 24px 28px;
+}
+
+.story-logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.story-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 10px;
+}
+
+.story-metric {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #e6b84a;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.story-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.story-read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.story-card:hover .story-read-btn {
+  border-color: #e6b84a;
+  color: #e6b84a;
+}
+
+@media(max-width: 900px) {
+  .stories-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width: 580px) {
+  .stories-grid { grid-template-columns: 1fr; }
+  .stories-top { flex-direction: column; }
+}
+
+/* ============ STORIES SECTION — MATCH CASE-CARD STYLE ============ */
+
+.stories-section .story-card {
+  border-radius: 20px;
+  overflow: visible;
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.stories-section .story-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(43, 242, 163, 0.3);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.5), 0 0 30px rgba(43, 242, 163, 0.03);
+}
+
+/* Keep img-wrap to show badge — hide the actual image */
+.stories-section .story-img-wrap {
+  height: auto;
+  overflow: visible;
+  background: none;
+  margin-bottom: 14px;
+}
+
+.stories-section .story-img-wrap img {
+  display: none;
+}
+
+/* Green category badge, like .tag-lbl */
+.stories-section .story-cat-badge {
+  position: static;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.stories-section .story-cat-badge::before {
+  background: var(--accent);
+}
+
+/*
+  Grid layout to reorder children regardless of DOM order:
+  HTML order:  logo-text, story-metric, story-desc, story-read-btn
+  Visual order: name (top), desc (middle, grows), metric | read-btn (bottom row)
+*/
+.stories-section .story-body {
+  padding: 0;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "name    name"
+    "desc    desc"
+    "metric  readbtn";
+  column-gap: 16px;
+  row-gap: 10px;
+}
+
+/* Name */
+.stories-section .story-logo-text {
+  grid-area: name;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Description — grows to push metric to bottom */
+.stories-section .story-desc {
+  grid-area: desc;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  align-self: start;
+}
+
+/* Metric — bottom-left, large green */
+.stories-section .story-metric {
+  grid-area: metric;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  align-self: end;
+}
+
+/* Read button — bottom-right, white → green on hover */
+.stories-section .story-read-btn {
+  grid-area: readbtn;
+  align-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.stories-section .story-card:hover .story-read-btn {
+  color: var(--accent);
+}
+
+/* Section heading — change gold to green */
+.stories-section .stories-badge {
+  color: var(--accent);
+}
+
+.stories-section .stories-badge .s-dot {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.stories-section .stories-heading .gold {
+  color: var(--accent);
+}
+
+.stories-section .stories-see-all:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
